@@ -4,74 +4,37 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+import * as indexStyles from "../components/index.module.css"
+import ProjectCard from "../components/project-card"
+import * as styles from "../css/style.css"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
+const projects = [
+  {
+    name: 'Unibet',
+    work: 'Digital Design',
+    image: 'https://saravikman.se/design/img/unibet/hockey-thumb.jpg',
+  },
+  {
+    name: 'Agood Company',
+    work: 'Graphic Design',
+    image: 'https://saravikman.se/design/img/agood/agood_thumb2.jpg',
+  },
+  {
+    name: 'Maria Casino',
+    work: 'Graphic Design',
+    image: 'https://saravikman.se/design/img/maria-casino/mc-thumb.jpg',
+  },
+];
+
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
+    <div 
+    style={{
+      width:`100wv`,
+    }}>
+      {/*
       <StaticImage
         src="../images/example.png"
         loading="eager"
@@ -80,41 +43,90 @@ const IndexPage = () => (
         formats={["auto", "webp", "avif"]}
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
+      />*/}
+
+      <div style={{ /* Fixed header spacing */
+            margin: `0 auto`,
+            padding: `var(--space-4) var(--size-gutter)`,
+          }}
+        >
+      </div>
+
+      <div className={styles.noise} style={{
+            padding: `0`,
+            background: `#f4f4f4`,
+            minHeight: `40rem`,
+            alignItems: `center`,
+            display:`grid`,
+            gridTemplateColumns: `repeat(12,minmax(0,1fr))`,
+            overflow:'hidden',
+          }}
           >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+        <div style={{
+              background: '#e5e5e5',
+              backgroundImage: 'url(https://arc.net/noise.png)',
+              backgroundRepeat: 'repeat',
+              minHeight:'100vh',
+              minWidth:'100vw',
+        }}></div>
+        <div style={{gridColumn: `3 / span 6`, fontSize: 'var(--font-lg)', zIndex:'10'}}>
+          <h1>
+            Lorem ipsum dolor sit amet. Dolisequetur lorem.
+          </h1>
+        </div>
+
+        <span style={{
+            width:'30rem',
+            height:'30rem',
+            background:'#f0f0f0',
+            borderRadius: '100%',
+            filter: 'blur(200px)',
+            position:'absolute',
+            top:'-15rem',
+            right: '0',
+            zIndex: '0',
+          }}></span>
+
+          <span style={{
+            width:'30rem',
+            height:'30rem',
+            background:'#DBAAC4',
+            borderRadius: '100%',
+            filter: 'blur(200px)',
+            position:'absolute',
+            left:'-9rem',
+            bottom: '0',
+            zIndex: '0',
+          }}></span>
+
+      </div>
+
+      <div style={{
+         zIndex:'10',     
+         position:'relative',  
+      }}>
+      <div style={{
+        display:`grid`,
+        gridTemplateColumns: `repeat(2, minmax(0, 1fr))`,
+      }}>
+
+        {
+          projects.map(({name, work, image}) => {
+            return (
+              <ProjectCard name={name} work={work} image={image}></ProjectCard>
+            );
+          })
+
+        }
+{/*
+        <ProjectCard name="Unibet" work="UX Design" image="https://saravikman.se/design/img/agood/agood_thumb2.jpg"></ProjectCard>
+        <ProjectCard name="Agood Company" work="Photography" image="https://saravikman.se/design/img/unibet/hockey-thumb.jpg"></ProjectCard>
+*/}
+        </div>
+        </div>
+
+    </div>
+
   </Layout>
 )
 
