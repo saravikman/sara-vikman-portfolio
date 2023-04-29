@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;1,300;1,400&family=Inconsolata&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 h1, h2 {
@@ -9,10 +13,3 @@ h1, h2 {
     background: rgb(182, 34, 58);
     background-image: url(https://arc.net/noise.png);
 }
-
-@media (min-width: 1024px) {
-    h1 {
-        font-size: 5rem;
-        color: blueviolet;
-    }
-  }

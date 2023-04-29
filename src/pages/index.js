@@ -30,10 +30,7 @@ const projects = [
 
 const IndexPage = () => (
   <Layout>
-    <div 
-    style={{
-      width:`100wv`,
-    }}>
+    <div className="w-full">
       {/*
       <StaticImage
         src="../images/example.png"
@@ -52,34 +49,18 @@ const IndexPage = () => (
         >
       </div>
 
-      <div className={styles.noise} style={{
-            padding: `0`,
-            background: `#f4f4f4`,
-            minHeight: `40rem`,
-            alignItems: `center`,
-            display:`grid`,
-            gridTemplateColumns: `repeat(12,minmax(0,1fr))`,
-            overflow:'hidden',
-          }}
-          >
-        <div style={{
-              background: '#e5e5e5',
+      <div className="grid grid-cols-12 overflow-hidden bg-[#f4f4f4] items-center relative min-h-[40rem]">
+        <div className="bg-[#e5e5e5] bg-repeat absolute h-full w-full" style={{
               backgroundImage: 'url(https://arc.net/noise.png)',
-              backgroundRepeat: 'repeat',
-              minHeight:'100vh',
-              minWidth:'100vw',
         }}></div>
-        <div style={{gridColumn: `3 / span 6`, fontSize: 'var(--font-lg)', zIndex:'10'}}>
-          <h1>
+        <div className="col-start-3 col-span-6 z-10">
+          <h1 className="text-7xl">
             Lorem ipsum dolor sit amet. Dolisequetur lorem.
           </h1>
         </div>
 
-        <span style={{
-            width:'30rem',
-            height:'30rem',
-            background:'#f0f0f0',
-            borderRadius: '100%',
+        <span className="w-[30rem] h-[30rem] rounded-full" style={{
+            background:'#F8E0E0',
             filter: 'blur(200px)',
             position:'absolute',
             top:'-15rem',
@@ -101,29 +82,15 @@ const IndexPage = () => (
 
       </div>
 
-      <div style={{
-         zIndex:'10',     
-         position:'relative',  
-      }}>
-      <div style={{
-        display:`grid`,
-        gridTemplateColumns: `repeat(2, minmax(0, 1fr))`,
-      }}>
-
-        {
-          projects.map(({name, work, image}) => {
+      <div className=" z-10 relative">
+        <div className="grid md:grid-cols-2">
+        { projects.map(({name, work, image}) => {
             return (
               <ProjectCard name={name} work={work} image={image}></ProjectCard>
             );
-          })
-
-        }
-{/*
-        <ProjectCard name="Unibet" work="UX Design" image="https://saravikman.se/design/img/agood/agood_thumb2.jpg"></ProjectCard>
-        <ProjectCard name="Agood Company" work="Photography" image="https://saravikman.se/design/img/unibet/hockey-thumb.jpg"></ProjectCard>
-*/}
+          })}
         </div>
-        </div>
+      </div>
 
     </div>
 

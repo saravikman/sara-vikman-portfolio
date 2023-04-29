@@ -2,18 +2,10 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header
+  <header className="m-auto flex justify-between items-center fixed z-50 w-full text-black"
     style={{
-      margin: `0 auto`,
       padding: `var(--space-4) 4rem`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
       backdropFilter:`blur(50px)`,
-      position:`fixed`,
-      zIndex:`50`,
-      width:`100vw`,
-      color:`black`,
     }}
   >
     <Link to="/">
@@ -30,12 +22,7 @@ const Header = ({ siteTitle }) => (
     </Link>
 
 
-    <div className="navigation"
-        style={{
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-        }}>
+    <div className="flex justify-between items-center">
       <span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span>
       <span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Photography</span>
     </div>
