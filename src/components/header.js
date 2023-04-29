@@ -1,13 +1,16 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { useState } from 'react';
+import Menu from "./menu"
 
-const Header = ({ siteTitle }) => (
-  <header className="m-auto flex justify-between items-center fixed z-50 w-full text-black"
-    style={{
-      padding: `var(--space-4) 4rem`,
-      backdropFilter:`blur(50px)`,
-    }}
-  >
+const Header = ({ siteTitle }) => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+  return (
+  <>
+  <header className="py-6 px-6 md:px-10 m-auto flex justify-between items-center fixed z-50 w-full text-black border-b border-zinc-400 backdrop-blur-lg">
     <Link to="/">
       <svg class="sv-logo" width="17" height="33" viewBox="0 0 219 471" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_114_58)">
@@ -21,16 +24,27 @@ const Header = ({ siteTitle }) => (
       </svg>
     </Link>
 
-
-    <div className="flex justify-between items-center">
-      <span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span>
-      <span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Photography</span>
+    <div className="flex justify-between">
+      <div className="flex justify-between items-center text-zinc-900 text-sm">
+        <a href="/"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span></a>
+        <a href="/"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Photography</span></a>
+      </div>
+      <button onClick={toggleMenu}
+      className="hamburger w-9 relative -mt-[0.1rem] ml-6">
+        <span className="hamburger-line top bg-black block h-[0.15rem] w-full rounded-full absolute top-0 transition-all duration-500 ease-linear"></span>
+        <span className="bg-black block h-[0.15rem] w-full rounded-full absolute top-[0.65rem]"></span>
+        <span className="hamburger-line bottom bg-black block h-[0.15rem] w-full rounded-full absolute top-[1.3rem] transition-all delay-200 duration-500 ease-linear"></span>
+      </button>
     </div>
 
-
   </header>
-)
+    {openMenu ? (
+      <Menu></Menu>
+      ) : null}
 
+  </>
+  )
+}
 
 export default Header
 
