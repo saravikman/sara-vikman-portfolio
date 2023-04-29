@@ -15,13 +15,8 @@ const ProjectCard = ({ name, work, image }) => {
             backgroundSize: `100%`,
         }}>
 
-        <h2 style={{
-            color:'white',
-            fontSize:'2rem',
-        }}>{name}</h2>
-        <span  style={{
-            color:`white`,
-        }}>{work}</span> 
+        <h2 className="text-white text-3xl">{name}</h2>
+        <span className="text-white">{work}</span> 
         </div>
 
 

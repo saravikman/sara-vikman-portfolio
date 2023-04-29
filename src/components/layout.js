@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import "../css/style.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,21 +25,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-        }}
-      >
+      <div className="m-auto">
         <main>{children}</main>
-        <footer
-          style={{
-            margin: `0 auto`,
-            fontSize: `var(--font-sm)`,
-            padding: '3rem 0',
-            textAlign: 'center',
-            fontFamily:'Inconsolata',
-          }}
-        >
+        <footer className="m-auto py-12 text-center">
           © {new Date().getFullYear()} &middot; Sara Vikman
         </footer>
       </div>
