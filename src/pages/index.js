@@ -1,13 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as indexStyles from "../components/index.module.css"
-import ProjectCard from "../components/project-card"
-import * as styles from "../css/style.css"
-import { motion } from "framer-motion"
+import ProjectHeading from "../components/project-heading"
 import Blob from "../components/blob"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
@@ -58,6 +55,16 @@ const IndexPage = () => (
       <Blob></Blob>
       </div>
 
+      <div className="z-10 relative px-36 m-auto">
+        <div className="">
+        { projects.map(({name, work, image}) => {
+            return (
+              <ProjectHeading name={name} work={work} image={image}></ProjectHeading>
+            );
+          })}
+        </div>
+      </div>
+{/*
       <div className=" z-10 relative">
         <div className="grid md:grid-cols-2">
         { projects.map(({name, work, image}) => {
@@ -66,7 +73,7 @@ const IndexPage = () => (
             );
           })}
         </div>
-      </div>
+        </div>*/}
 
     </div>
 

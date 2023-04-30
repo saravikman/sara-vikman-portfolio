@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Cormorant+Infant:ital,wght@0,300;0,400;1,300;1,400&family=Inconsolata&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 :root {
     --border-radius: 4px;
     --color-text: #333;
@@ -46,6 +47,7 @@ html {
     font-size: var(--font-md);
     line-height: var(--line-height-normal);
     overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   body {
     -moz-osx-font-smoothing: grayscale;
@@ -86,11 +88,11 @@ html {
   }
 */
 h1, h2 {
-    font-family: 'Cormorant Infant', 'sans-serif';
+    font-family: 'Rubik', 'sans-serif';
     font-weight: 300;
 }
 h1 {
-    font-size: 70px;
+    font-size: 80px;
 }
 .menu {
     font-family: 'Cormorant Infant', 'sans-serif';
