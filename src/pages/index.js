@@ -4,10 +4,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as indexStyles from "../components/index.module.css"
-import ProjectHeading from "../components/project-heading"
 import Blob from "../components/blob"
-import ProjectImage from "../components/project-image"
 import WorksCard from "../components/works-card"
+import JumboHeading from "../components/jumbo-heading"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
@@ -15,29 +14,34 @@ const projects = [
   {
     id: 'Agood Company',
     work: ['Graphic Design', 'Photography'],
-    image: 'https://www.datocms-assets.com/99032/1682363960-agood_thumb2.jpg',
+    image: 'https://www.datocms-assets.com/99032/1682948922-agood_thumb.png',
     link: '/agood-company'
   },
   {
     id: 'Unibet',
     test: 'Digital Design',
     work: ['Digital Design', 'Web Development'],
-    image: 'https://saravikman.se/design/img/unibet/hockey-thumb.jpg',
+    image: 'https://www.datocms-assets.com/99032/1682948927-unibet_thumb.png',
   },
   {
     id: 'Maria Casino',
     work: ['Digital Design', 'Web Development'],
-    image: 'https://saravikman.se/design/img/maria-casino/mc-thumb.jpg',
+    image: 'https://www.datocms-assets.com/99032/1682948951-maria_thumb.png',
   },
   {
     id: 'Österlånggatan 17',
     work: ['Logotype'],
-    image: 'https://saravikman.se/design/img/osterlanggatan/o17-thumb.jpg',
+    image: 'https://www.datocms-assets.com/99032/1682948955-osterlang_thumb.gif',
   },
   {
-    id: 'Japanporten',
-    work: ['Web Design', 'Web Development'],
-    image: 'https://cdna.artstation.com/p/assets/images/images/057/937/380/large/sara-vikman-gilt-2.jpg?1673010366',
+    id: 'Editorial',
+    work: ['Collection'],
+    image: 'https://www.datocms-assets.com/99032/1682948930-editorial_thumb.png',
+  },
+  {
+    id: 'Illustration',
+    work: ['Collection'],
+    image: 'https://www.datocms-assets.com/99032/1682948948-illustration_thumb.png',
   },
 ];
 
@@ -56,13 +60,14 @@ const IndexPage = () => (
       />*/}
 
       <div className="grid grid-cols-12 pt-44 pb-24 px-6 overflow-hidden bg-[#f4f4f4] items-center relative md:min-h-[90vh]">
-        <div className="bg-[#f4f4f4] bg-repeat absolute h-full w-full" style={{
-              /*backgroundImage: 'url(https://arc.net/noise.png)',*/
+        <div className="bg-repeat absolute h-full w-full" style={{
+              backgroundImage: 'url(https://arc.net/noise.png)',
+              zIndex: 1,
+              backgroundBlendMode: 'overlay',
+              opacity: '50%',
         }}></div>
         <div className="md:col-start-2 col-span-12 md:col-span-6 z-10">
-          <h1 className="text-5xl md:text-7xl">
-            Digital designer, web developer and hobby photographer.
-          </h1>
+          <JumboHeading>Digital designer, web developer and hobby photographer.</JumboHeading>
         </div>
 
       <Blob></Blob>

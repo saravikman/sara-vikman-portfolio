@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Keyword from "../components/keyword"
-import { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import ProjectInfo from "../components/project-info"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
@@ -17,43 +15,32 @@ const content = {
   };
 
 const AgoodCompany = () => {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { amount: 0 })
+
 return (
   <Layout>
-    
-    <div className="w-full">
 
-      <div className="grid grid-cols-12 pt-44 pb-24 px-6bg-[#f4f4f4] items-center">
+      <div className="grid grid-cols-12 pt-44 pb-44 px-6 bg-[#f4f4f4] items-center">
         <div className="md:col-start-2 col-span-12 md:col-span-6 z-10">
-                {content.work.map((arr, index) => (
-                    <><Keyword keyword={arr}></Keyword></>
-                    ))}
-            <motion.h1 
-                    ref={ref} 
-                    initial={{ opacity: 0, translateY: 30, }}
-                    whileInView={{ opacity: 1, translateY: 0, }}
-                    transition={{ ease: "easeOut", duration: 0.5 }}
-                    viewport={{ once: true }}
-                    >
-            <h1 className="text-5xl md:text-8xl py-10 pb-16">
-                {content.title}
-            </h1>
-            </motion.h1>         
-          <motion.div
-            ref={ref} 
-            initial={{ opacity: 0, translateY: 20, }}
-            whileInView={{ opacity: 1, translateY: 0, }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.2, }}
-            viewport={{ once: true }}>
-          <h2 className="text-2xl mb-6 font-medium">Project Overview</h2>
-          <p>{content.description}</p>
-          </motion.div>
+            <ProjectInfo title={content.title} keywords={content.work} description={content.description}></ProjectInfo>
         </div>
       </div>
-      <img className="w-full rounded-sm" src={content.featuredImage}></img>
 
-    </div>
+      <div className="flex flex-wrap px-36 -mt-28">
+        <img className="rounded-md w-full mb-[--image-margin]" src={content.featuredImage}></img>
+        <div className="grid grid-cols-2 gap-[--image-margin] mb-[--image-margin]">
+          <img className="rounded-md" src={content.featuredImage}></img>
+          <img className="rounded-md" src="https://www.datocms-assets.com/99032/1682803734-12.jpg"></img>
+        </div>
+        <div className="w-[70%] m-auto text-center py-24">
+          <p className="text-2xl leading-relaxed">
+            A Good Company is a lifestyle brand with a truly sustainable profile. For A Good Company I had responsibility for producing creatives for marketing activities, both digital and print, developing packaging design.</p>
+        </div>
+        <div className="grid grid-cols-3 gap-[--image-margin] mb-[--image-margin]">
+          <img className="rounded-md" src={content.featuredImage}></img>
+          <img className="rounded-md" src="https://www.datocms-assets.com/99032/1682803734-12.jpg"></img>
+          <img className="rounded-md" src={content.featuredImage}></img>
+        </div>
+      </div>
 
   </Layout>
 )

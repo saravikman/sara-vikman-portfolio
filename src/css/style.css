@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Cormorant+Infant:ital,wght@0,300;0,400;1,300;1,400&family=Inconsolata&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
@@ -30,6 +30,7 @@
     --size-content: 54rem;
     --size-gutter: var(--space-5);
     --size-gap: var(--space-6);
+    --image-margin: var(--space-3);
   }
 * {
   box-sizing: inherit;

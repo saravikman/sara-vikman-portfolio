@@ -19,8 +19,9 @@ const WorksCard = ({ key, name, work, image, number, link }) => {
             <motion.img 
                 ref={ref} 
                 style={{
-                    //opacity: isInView ? 1 : 0,
-                    transition: "all ease-out 0.5s",
+                    opacity: isInView ? 1 : 0,
+                    filter: isInView ? 'blur(0)' : 'blur(30px)',
+                    transition: "all ease-out 0.2s",
                 }}
                 className={`scale-[1] group-hover:scale-[1.05]`} src={image}>
             </motion.img>
