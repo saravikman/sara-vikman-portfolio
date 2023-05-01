@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => {
 
     <div className="flex justify-between">
       <div className="flex justify-between items-center text-zinc-900 text-sm">
-        <a href="/"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span></a>
+        <a href="#design"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span></a>
         <a href="/"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Photography</span></a>
       </div>
       <button onClick={toggleMenu}

@@ -40,6 +40,9 @@
 *:after {
   box-sizing: inherit;
 }  
+::selection {
+  background-color: rgb(226, 187, 189);
+}
 html {
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
