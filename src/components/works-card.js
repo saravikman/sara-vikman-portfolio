@@ -1,6 +1,5 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion"
 import Keyword from "./keyword";
 

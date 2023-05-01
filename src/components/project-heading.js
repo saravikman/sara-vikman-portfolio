@@ -1,7 +1,6 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import Keyword from "./keyword";
 
 const ProjectHeading = ({ key, name, work, image, number }) => {

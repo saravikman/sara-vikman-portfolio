@@ -1,5 +1,4 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 const ProjectCard = ({ name, work, image }) => {
   

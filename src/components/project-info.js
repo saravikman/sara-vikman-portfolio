@@ -1,5 +1,5 @@
 import React from "react"
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import JumboHeading from "../components/jumbo-heading"
 import Keyword from "../components/keyword"
@@ -19,7 +19,7 @@ const isInView = useInView(ref, { amount: 0 })
             transition={{ ease: "easeOut", duration: 0.5, delay: 0.2, }}
             viewport={{ once: true }}>
             <h2 className="text-2xl mb-6 font-medium">Project Overview</h2>
-            <p>{description}</p>
+            <p className="text-lg">{description}</p>
         </motion.div>
         <motion.div className="mb-10"
             ref={ref} 
