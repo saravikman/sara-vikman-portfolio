@@ -23,7 +23,7 @@ const ProjectLayout = ({ children }) => {
     <ProjectLinks></ProjectLinks>
       <main>{children}</main>
       
-      <footer className="m-auto mt-36 py-8 text-center font-mono text-sm border-t border-zinc-400">
+      <footer className="m-auto mt-16 py-8 text-center font-mono text-sm border-t border-zinc-400">
           © {new Date().getFullYear()} Sara Vikman
       </footer>
     </div>

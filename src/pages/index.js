@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as indexStyles from "../components/index.module.css"
 import Blob from "../components/blob"
 import WorksCard from "../components/works-card"
 import JumboHeading from "../components/jumbo-heading"
@@ -22,26 +21,31 @@ const projects = [
     test: 'Digital Design',
     work: ['Digital Design', 'Web Development'],
     image: 'https://www.datocms-assets.com/99032/1682948927-unibet_thumb.png',
+    link: '/unibet'
   },
   {
     id: 'Maria Casino',
     work: ['Digital Design', 'Web Development'],
     image: 'https://www.datocms-assets.com/99032/1682948951-maria_thumb.png',
+    link: '/maria-casino'
   },
   {
     id: 'Österlånggatan 17',
     work: ['Logotype'],
     image: 'https://www.datocms-assets.com/99032/1682948955-osterlang_thumb.gif',
+    link: '/osterlanggatan-17'
   },
   {
     id: 'Editorial',
     work: ['Collection'],
     image: 'https://www.datocms-assets.com/99032/1682948930-editorial_thumb.png',
+    link: '/editorial'
   },
   {
     id: 'Illustration',
     work: ['Collection'],
     image: 'https://www.datocms-assets.com/99032/1682948948-illustration_thumb.png',
+    link: '/illustration'
   },
 ];
 

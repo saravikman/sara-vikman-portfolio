@@ -5,7 +5,7 @@ import Keyword from "./keyword";
 
 const WorksCard = ({ key, name, work, image, number, link }) => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { amount: 0 })
+    //const whileInView = useInView(ref, { amount: 0 })
     const workArray = work;
 
     console.log(ref);
@@ -14,15 +14,18 @@ const WorksCard = ({ key, name, work, image, number, link }) => {
       <div className="group pb-10">
         <div className="items-center">
         <a href={link}>
-    
+
             <motion.img 
-                ref={ref} 
-                style={{
-                    opacity: isInView ? 1 : 0,
-                    filter: isInView ? 'blur(0)' : 'blur(30px)',
-                    transition: "all ease-out 0.2s",
+                ref={ref}
+                initial={{ opacity: 0, translateY: 30, filter: "blur(30px)" }}
+                whileInView={{ opacity: 1, translateY: 0, filter: "blur(0)", }}
+                transition={{ ease: "easeOut", duration: 0.5 }}
+                viewport={{ once: true, amount: 0.7 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5 },
                 }}
-                className={`scale-[1] group-hover:scale-[1.05]`} src={image}>
+                src={image}>
             </motion.img>
 
             <div className="mt-10"> 
