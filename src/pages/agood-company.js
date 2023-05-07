@@ -3,6 +3,15 @@ import ProjectLayout from "../components/project-layout"
 import Seo from "../components/seo"
 import ProjectInfo from "../components/project-info"
 import ProjectList from "../components/project-list"
+import DataSchema from "../data/data";
+
+const Project = () => {
+    {DataSchema.filter(name => name = "Agood Company").map()}
+}
+const projecttest = DataSchema;
+
+console.log(projecttest);
+
 
 const content = {
     title: 'Agood Company',

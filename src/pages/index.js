@@ -63,7 +63,7 @@ const IndexPage = () => (
         style={{ marginBottom: `var(--space-3)` }}
       />*/}
 
-      <div className="grid grid-cols-12 pt-44 pb-24 px-6 overflow-hidden bg-[#f4f4f4] items-center relative md:min-h-[90vh]">
+      <div className="grid grid-cols-12 pt-44 pb-24 px-6 overflow-hidden bg-[#f4f4f4] items-center relative md:min-h-[100vh]">
         <div className="bg-repeat absolute h-full w-full" style={{
               backgroundImage: 'url(https://arc.net/noise.png)',
               zIndex: 1,
