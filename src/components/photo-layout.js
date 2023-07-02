@@ -4,7 +4,7 @@ import Header from "./header"
 import Cursor from "./cursor"
 import ProjectLinks from "./project-links"
 
-const ProjectLayout = ({ children }) => {
+const ProjectLayout = ({ children, theme }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,10 +17,10 @@ const ProjectLayout = ({ children }) => {
 
   return (
     <>
-    <Header></Header>
+    <Header theme='white'></Header>
     <Cursor></Cursor>
     <div className="m-auto">
-    <ProjectLinks></ProjectLinks>
+    <ProjectLinks theme='white'></ProjectLinks>
       <main>{children}</main>
       
       <footer className="m-auto mt-16 py-8 text-center font-mono text-sm border-t border-zinc-400">

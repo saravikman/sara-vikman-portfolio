@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 const projects = [
     {
@@ -42,7 +41,7 @@ const ProjectList = ( { current } ) => {
 
     return (
     
-    <div className="m-auto text-center w-[90%] mt-6">
+    <div className="m-auto text-center w-[90%] my-10">
     <h4 className="mb-6">Other Projects</h4>
 
         {allProjects.filter(name => name != current).map(projectName => (

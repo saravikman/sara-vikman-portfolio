@@ -16,6 +16,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `k1w1j9na9uy7`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `hLYp8UHu0_97ETpJ_N8XpbJIPMnk2I_j3AmlKzP0PKk`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,7 +45,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/sv-logo.png`, // This path is relative to the root of the site.
       },
     },
   ],
