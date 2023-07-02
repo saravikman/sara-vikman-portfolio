@@ -16,6 +16,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `k1w1j9na9uy7`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `hLYp8UHu0_97ETpJ_N8XpbJIPMnk2I_j3AmlKzP0PKk`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

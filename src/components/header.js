@@ -24,7 +24,7 @@ const Header = ({ siteTitle, theme }) => {
         </defs>
       </svg>
     </Link>
-
+{/*
     <div className="flex justify-between">
       <div className={`flex justify-between items-center text-${theme} text-sm`}>
         <a href="#design"><span style={{ paddingRight: `1.2rem`, fontFamily:'Inconsolata'}}>Design</span></a>
@@ -36,7 +36,7 @@ const Header = ({ siteTitle, theme }) => {
         <span className={`bg-${theme} block h-[0.15rem] w-full rounded-full absolute top-[0.65rem]`}></span>
         <span className={`hamburger-line bottom bg-${theme} block h-[0.15rem] w-full rounded-full absolute top-[1.3rem] transition-all delay-200 duration-500 ease-linear`}></span>
       </button>
-    </div>
+  </div> */}
 
   </header>
     {openMenu ? (

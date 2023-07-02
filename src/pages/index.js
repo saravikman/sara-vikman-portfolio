@@ -21,33 +21,11 @@ const projects = [
     test: 'Digital Design',
     work: ['Digital Design', 'Web Development'],
     image: 'https://www.datocms-assets.com/99032/1682948927-unibet_thumb.png',
-    link: '/unibet'
-  },
-  {
-    id: 'Maria Casino',
-    work: ['Digital Design', 'Web Development'],
-    image: 'https://www.datocms-assets.com/99032/1682948951-maria_thumb.png',
-    link: '/maria-casino'
-  },
-  {
-    id: 'Österlånggatan 17',
-    work: ['Logotype'],
-    image: 'https://www.datocms-assets.com/99032/1682948955-osterlang_thumb.gif',
-    link: '/osterlanggatan-17'
-  },
-  {
-    id: 'Editorial',
-    work: ['Collection'],
-    image: 'https://www.datocms-assets.com/99032/1682948930-editorial_thumb.png',
-    link: '/editorial'
-  },
-  {
-    id: 'Illustration',
-    work: ['Collection'],
-    image: 'https://www.datocms-assets.com/99032/1682948948-illustration_thumb.png',
-    link: '/illustration'
+    link: '/agood-company'
   },
 ];
+
+const lightColor = '#f4f4f4'
 
 const IndexPage = () => (
   <Layout>
@@ -68,7 +46,7 @@ const IndexPage = () => (
               backgroundImage: 'url(https://arc.net/noise.png)',
               zIndex: 1,
               backgroundBlendMode: 'overlay',
-              opacity: '50%',
+              opacity: '30%',
         }}></div>
         <div className="md:col-start-2 col-span-12 md:col-span-6 z-10">
           <JumboHeading>Digital designer, web developer and hobby photographer.</JumboHeading>
