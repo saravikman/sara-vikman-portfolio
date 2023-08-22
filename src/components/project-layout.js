@@ -20,7 +20,6 @@ const ProjectLayout = ({ children }) => {
     <Header></Header>
     <Cursor></Cursor>
     <div className="m-auto">
-    <ProjectLinks></ProjectLinks>
       <main>{children}</main>
       
       <footer className="m-auto mt-16 py-8 text-center font-mono text-sm border-t border-zinc-400">
