@@ -51,7 +51,6 @@ html {
     font-size: var(--font-md);
     line-height: var(--line-height-normal);
     overflow-y: scroll;
-    /*cursor: none;*/
   }
   body {
     -moz-osx-font-smoothing: grayscale;
@@ -86,8 +85,9 @@ html {
     font-style: italic;
   }  
 h1, h2 {
-    font-family: 'Cormorant Infant', 'sans-serif';
-    font-weight: 300;
+    font-family: 'Work Sans', 'sans-serif';
+    font-weight: 400;
+    letter-spacing: -0.1rem;
 }
 h1 {
     font-size: 80px;
@@ -124,4 +124,10 @@ h1 {
 
 .scrolling-wrapper-flexbox .card {
   flex: 0 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    cursor: none;
+  }
 }
