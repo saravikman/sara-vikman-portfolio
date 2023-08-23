@@ -7,12 +7,29 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
-}
+const path = require('path');
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const response = await graphql(`
+    query {
+      allContentfulPhotography {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+  response.data.allContentfulPhotography.edges.forEach((edge) => {
+    createPage({
+      path: `/photography/${edge.node.slug}`,
+      component: path.resolve('./src/templates/photography.js'),
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+};
