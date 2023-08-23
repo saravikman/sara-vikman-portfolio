@@ -64,7 +64,7 @@ const IndexPage = ({ data }) => (
         <Blob></Blob>
       </div>
 
-      <div id="design" className="md:grid md:grid-cols-2 md:gap-10 w-4/5 md:w-11/12 z-10 m-auto mb-10 pt-10 md:pt-16">
+      <div id="design" className="md:grid md:grid-cols-2 md:gap-10 w-4/5 md:w-10/12 z-10 m-auto mb-10 pt-10 md:pt-16">
         {data.allContentfulPhotography.nodes.map((item, index) => {
           return (
             <>

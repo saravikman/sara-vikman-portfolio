@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
-import Cursor from "./cursor"
+import AnimatedCursor from "react-animated-cursor"
 import { useInView } from "framer-motion"
 import { useState, useEffect } from 'react';
 
@@ -29,7 +29,17 @@ const PhotoLayout = ({ children, theme, projects }) => {
     <>
       <div className="relative">
         <Header theme={`${scroll ? "black" : "white"}`}></Header>
-        <Cursor></Cursor>
+
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2.5}
+          color='11, 11, 11'
+          outerAlpha={0.1}
+          outerStyle={{
+            border: '0px solid #333'
+          }} />
         <div className="m-auto">
           <main>{children}</main>
 
