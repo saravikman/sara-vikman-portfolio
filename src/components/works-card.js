@@ -12,7 +12,7 @@ const WorksCard = ({ key, name, work, image, number, link }) => {
   console.log(ref);
   return (
     <>
-      <div className="group pb-10">
+      <div className="group pb-4 md:pb-10">
         <div className="items-center">
           <Link to={link}>
 
@@ -29,16 +29,17 @@ const WorksCard = ({ key, name, work, image, number, link }) => {
               src={image}>
             </motion.img>
 
-            <div className="mt-10">
+            <div className="mt-4 md:mt-10 text-left">
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, translateY: 30, }}
                 whileInView={{ opacity: 1, translateY: 0, }}
                 transition={{ ease: "easeOut", duration: 0.5 }}
                 viewport={{ once: true }}
+                className="s:flex s:flex-wrap"
               >
-                <span className="font-mono text-md">0{number}</span>
-                <h2 className="text-black text-5xl mb-4 group-hover:underline">{name}</h2>
+                <span className="font-mono text-sm md:text-md pr-2">0{number}</span>
+                <h2 className="text-black text-3xl md:text-5xl mb-4 group-hover:underline">{name}</h2>
                 {/*{workArray.map((arr, index) => (
                     <><Keyword keyword={arr}></Keyword></>
                     ))}*/}

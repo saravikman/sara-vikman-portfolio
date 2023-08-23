@@ -116,7 +116,6 @@ h1 {
     transition: all 0.3s ease;
 }
 
-
 .scrolling-wrapper-flexbox {
   display: flex;
   flex-wrap: nowrap;

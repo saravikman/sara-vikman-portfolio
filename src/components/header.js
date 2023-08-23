@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Menu from "./menu"
 
 const Header = ({ siteTitle, theme }) => {
@@ -8,13 +8,6 @@ const Header = ({ siteTitle, theme }) => {
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
-
-  const [scroll, setScroll] = useState(false)
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 700)
-    })
-  }, [])
 
   return (
     <>
@@ -31,19 +24,19 @@ const Header = ({ siteTitle, theme }) => {
             </defs>
           </svg>
         </Link>
-
+        {/*
         <div className="flex justify-between">
           <div className={`flex justify-between items-center text-${theme} text-sm`}>
             <a href="#design"><span style={{ paddingRight: `1.2rem`, fontFamily: 'Inconsolata' }}>Design</span></a>
             <a href="/"><span style={{ paddingRight: `1.2rem`, fontFamily: 'Inconsolata' }}>Photography</span></a>
           </div>
           <button onClick={toggleMenu}
-            className="hamburger w-9 relative -mt-[0.1rem] ml-6">
+            className="hamburger w-9 relative -mt-[0.1rem] ml-6 bg-zinc-50/10 text-white">
             <span className={`bg-${theme} hamburger-line top block h-[0.15rem] w-full rounded-full absolute top-0 transition-all duration-500 ease-linear`}></span>
             <span className={`bg-${theme} block h-[0.15rem] w-full rounded-full absolute top-[0.65rem]`}></span>
             <span className={`bg-${theme} hamburger-line bottom block h-[0.15rem] w-full rounded-full absolute top-[1.3rem] transition-all delay-200 duration-500 ease-linear`}></span>
           </button>
-        </div>
+        </div>*/}
 
       </header>
       {openMenu ? (

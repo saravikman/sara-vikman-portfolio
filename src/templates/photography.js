@@ -40,19 +40,20 @@ query ($slug: String!) {
 `
 const Photography = (props) => {
   const ref = useRef(null)
-
   return (
     <PhotoLayout>
-      <div className="bg-[#171717] relative h-[100vh]">
+      <div className="bg-[#171717] relative h-[60vh] md:h-[100vh]">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.7 }}
           viewport={{ once: true }}
-          className="h-[100vh] w-full bg-cover bg-center bg-fixed flex place-items-end absolute z-10"
-          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(${props.data.contentfulPhotography.hero.url})` }}>
+          className={`h-[60vh] md:h-[100vh] w-full bg-cover bg-bottom md:bg-center bg-fixed flex place-items-end absolute z-10 transition-all duration-[0.4s]`}
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(${props.data.contentfulPhotography.hero.url})`
+          }}>
         </motion.div>
-        <div className="w-4/5 mx-auto mb-24 z-20 absolute bottom-0 left-0 right-0 text-center">
+        <div className="w-4/5 mx-auto mb-6 md:mb-24 z-20 absolute bottom-0 left-0 right-0 text-center">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, translateY: 30, }}
@@ -60,24 +61,39 @@ const Photography = (props) => {
             transition={{ ease: "easeOut", duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="font-mono text-md text-white">02</span>
-            <h2 className="text-white text-8xl mb-4 group-hover:underline">{props.data.contentfulPhotography.title}</h2>
-            <h3 className="justify-end uppercase font-mono tracking-widest text-s text-white">{props.data.contentfulPhotography.subtitle}</h3>
+            <span className="font-mono text-s md:text-md text-white">02</span>
+            <h2 className="text-white text-5xl md:text-8xl mb-4 group-hover:underline">{props.data.contentfulPhotography.title}</h2>
+            <h3 className="justify-end uppercase font-mono tracking-widest text-xs md:text-s text-white">{props.data.contentfulPhotography.subtitle}</h3>
           </motion.div>
         </div>
       </div>
 
 
-      <div className="w-4/5 m-auto">
-        <div className="w-2/3 my-24 pr-44 text-lg">{props.data.contentfulPhotography.introduction.introduction}</div>
+      <div className="w-4/5 m-auto py-10">
+        <div className="md:grid md:grid-cols-2 md:py-10 text-sm md:text-lg">{props.data.contentfulPhotography.introduction.introduction}</div>
       </div>
-      <div className="w-4/5 m-auto grid grid-cols-2 flex-wrap gap-14 items-center">
+      <div className="w-11/12 md:w-4/5 m-auto grid grid-cols-2 flex-wrap gap-4 md:gap-14 items-center">
         {props.data.contentfulPhotography.images.map((image) => (
+
           image.description == "full" ?
-            (<img className="w-full col-span-2" key={image.id} src={image.url} />)
+            (<motion.img
+              ref={ref}
+              initial={{ opacity: 0, translateY: 30, }}
+              whileInView={{ opacity: 1, translateY: 0, }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+              className="w-full col-span-2" loading="lazy" key={image.id} src={image.url} />)
             : image.description == "square" ?
-              (<img className="w-1/2 block m-auto col-span-2" key={image.id} src={image.url} />)
-              : (<img className="basis-1/2" key={image.id} src={image.url} />)
+              (<motion.img
+                ref={ref}
+                initial={{ opacity: 0, translateY: 30, }}
+                whileInView={{ opacity: 1, translateY: 0, }}
+                transition={{ ease: "easeOut", duration: 0.5 }} className="w-1/2 block m-auto col-span-2" loading="lazy" key={image.id} src={image.url} />)
+              : (<motion.img
+                ref={ref}
+                initial={{ opacity: 0, translateY: 30, }}
+                whileInView={{ opacity: 1, translateY: 0, }}
+                transition={{ ease: "easeOut", duration: 0.5 }} className="basis-1/2" loading="lazy" key={image.id} src={image.url} />)
+
         ))}
       </div>
 
@@ -85,8 +101,7 @@ const Photography = (props) => {
         <h4 className="my-4">Other Projects</h4>
 
         {props.data.allContentfulPhotography.nodes.filter(listItem => listItem.title != props.data.contentfulPhotography.title).map(listItem => (
-          <Link to={`../${listItem.slug}`}><p className="inline text-2xl m-6 leading-loose hover:opacity-50 transition-all">{listItem.title}</p></Link>
-
+          <Link to={`../${listItem.slug}`}><p className="inline text-lg md:text-2xl m-6 leading-loose hover:opacity-50 transition-all">{listItem.title}</p></Link>
         ))}
       </div>
 

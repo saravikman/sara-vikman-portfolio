@@ -2,7 +2,6 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Cursor from "./cursor"
-import ProjectLinks from "./project-links"
 import { useInView } from "framer-motion"
 import { useState, useEffect } from 'react';
 

@@ -49,18 +49,8 @@ const scrollToTop = () => {
 const IndexPage = ({ data }) => (
   <Layout>
     <div className="w-full">
-      {/*
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />*/}
 
-      <div className="grid grid-cols-12 pt-44 pb-24 px-6 overflow-hidden bg-[#f4f4f4] items-center relative md:min-h-[100vh]">
+      <div className="grid grid-cols-12 pt-24 md:pt-44 md:pb-24 px-6 overflow-hidden bg-[#f4f4f4] items-center relative md:min-h-[100vh]">
         <div className="bg-repeat absolute h-full w-full" style={{
           backgroundImage: 'url(https://arc.net/noise.png)',
           zIndex: 1,
@@ -74,7 +64,7 @@ const IndexPage = ({ data }) => (
         <Blob></Blob>
       </div>
 
-      <div id="design" className="scroll-mt-20 md:grid md:grid-cols-2 md:gap-10 z-10 px-36 m-auto mb-10 pt-16">
+      <div id="design" className="md:grid md:grid-cols-2 md:gap-10 w-4/5 md:w-11/12 z-10 m-auto mb-10 pt-10 md:pt-16">
         {data.allContentfulPhotography.nodes.map((item, index) => {
           return (
             <>

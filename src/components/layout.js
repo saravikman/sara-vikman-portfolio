@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <Cursor></Cursor>
       <div className="m-auto">
         <main>{children}</main>
-        <footer className="m-auto mt-36 py-8 text-center font-mono text-sm border-t border-zinc-200">
+        <footer className="m-auto mt-10 md:mt-36 py-8 text-center font-mono text-sm border-t border-zinc-200">
           © {new Date().getFullYear()} Sara Vikman
         </footer>
       </div>
