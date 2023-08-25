@@ -20,8 +20,12 @@ export default function useMousePosition() {
   return (
     <>
       <motion.div
-        style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}
-        className="fixed bg-black top-0 left-0 w-[24px] h-[24px] rounded-full z-[900] pointer-events-none"
+        style={{ left: `calc(${mousePosition.x}px - 0.75rem)`, top: `calc(${mousePosition.y}px - 0.8rem)` }}
+        className="fixed bg-white/5 backdrop-blur-sm border-2 border-black/20 top-0 left-0 w-[3rem] h-[3rem] rounded-full z-[900] pointer-events-none"
+      ></motion.div>
+      <motion.div
+        style={{ left: `calc(${mousePosition.x}px + 7px)`, top: `calc(${mousePosition.y}px + 7px)` }}
+        className="fixed bg-black top-0 left-0 w-[10px] h-[10px] rounded-full z-[900] pointer-events-none"
       ></motion.div>
     </>
   );

@@ -12,6 +12,7 @@ query ($slug: String!) {
       slug
       title
       subtitle
+      year
       introduction {
         introduction
       }
@@ -69,11 +70,15 @@ const Photography = (props) => {
       </div>
 
 
-      <div className="w-4/5 m-auto py-10">
-        <div className="md:grid md:grid-cols-2 md:py-10 text-sm md:text-lg">{props.data.contentfulPhotography.introduction.introduction}</div>
+      <div className="w-4/5 m-auto py-10 md:grid md:grid-cols-2">
+        <div className="md:col-span-1 md:py-10 text-sm md:text-lg">{props.data.contentfulPhotography.introduction.introduction}</div>
+        <div className="md:col-span-1 md:py-10 text-sm md:text-lg text-right">
+          <p className="text-gray-400">Year</p>
+          {props.data.contentfulPhotography.year}
+        </div>
       </div>
       <div className="w-11/12 md:w-4/5 m-auto grid grid-cols-2 flex-wrap gap-4 md:gap-14 items-center">
-        {props.data.contentfulPhotography.images.map((image) => (
+        {props.data.contentfulPhotography.images.slice(0, 3).map((image) => (
 
           image.description == "full" ?
             (<motion.img
@@ -95,9 +100,33 @@ const Photography = (props) => {
                 transition={{ ease: "easeOut", duration: 0.5 }} className="basis-1/2" loading="lazy" key={image.id} src={image.url} />)
 
         ))}
+
+        {props.data.contentfulPhotography.images.slice(3, props.data.contentfulPhotography.images.length).map((image) => (
+
+          image.description == "full" ?
+            (<motion.img
+              ref={ref}
+              initial={{ opacity: 0, translateY: 30, }}
+              whileInView={{ opacity: 1, translateY: 0, }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+              className="w-full col-span-2" loading="lazy" key={image.id} src={image.url} />)
+            : image.description == "square" ?
+              (<motion.img
+                ref={ref}
+                initial={{ opacity: 0, translateY: 30, }}
+                whileInView={{ opacity: 1, translateY: 0, }}
+                transition={{ ease: "easeOut", duration: 0.5 }} className="w-1/2 block m-auto col-span-2" loading="lazy" key={image.id} src={image.url} />)
+              : (<motion.img
+                ref={ref}
+                initial={{ opacity: 0, translateY: 30, }}
+                whileInView={{ opacity: 1, translateY: 0, }}
+                transition={{ ease: "easeOut", duration: 0.5 }} className="basis-1/2" loading="lazy" key={image.id} src={image.url} />)
+
+        ))}
+
       </div>
 
-      <div className="m-auto text-center w-[90%] mb-10 mt-14">
+      <div className="m-auto text-center w-4/5 mb-10 mt-14">
         <h4 className="my-4">Other Projects</h4>
 
         {props.data.allContentfulPhotography.nodes.filter(listItem => listItem.title != props.data.contentfulPhotography.title).map(listItem => (
@@ -109,6 +138,11 @@ const Photography = (props) => {
   )
 }
 
-export const Head = () => <Seo title="Photos" />
+export const Head = ({ data }) => (
+  <>
+    <title>{data.contentfulPhotography.title}</title>
+    <Seo title={data.contentfulPhotography.title} />
+  </>
+)
 
 export default Photography
