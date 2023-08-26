@@ -4,15 +4,6 @@ import Header from "./header"
 import Cursor from "./cursor"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
@@ -20,7 +11,7 @@ const Layout = ({ children }) => {
       <Cursor></Cursor>
       <div className="m-auto">
         <main>{children}</main>
-        <footer className="m-auto mt-10 md:mt-36 py-8 text-center font-mono text-sm border-t border-zinc-200">
+        <footer className="m-auto mt-10 md:mt-16 py-8 text-center font-mono text-xs uppercase font-medium tracking-wider">
           © {new Date().getFullYear()} Sara Vikman
         </footer>
       </div>

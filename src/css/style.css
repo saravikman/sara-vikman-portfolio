@@ -4,15 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;1,200&family=Cormorant+Infant:ital,wght@0,300;0,400;1,300;1,400&family=Inconsolata&family=Inter:wght@300;400&family=Manrope:wght@300;400;500;600&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&family=Work+Sans:wght@200;300;400&display=swap');
 :root {
-    --border-radius: 4px;
     --color-text: #333;
-    --color-primary: #7026b9;
-    --color-code-bg: #fff4db;
-    --color-code: #8a6534;
     --color-links: #2d2d2d;
-    --font-sans: "Inter", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --font-mono: "Inconsolata", "Courier New", monospace;
-    --font-heading: "Marcellus", sans-serif;
     --font-lg: 18px;
     --font-md: 16px;
     --font-sm: 14px;
@@ -42,7 +35,7 @@
   box-sizing: inherit;
 }  
 ::selection {
-  background-color: rgb(226, 187, 189);
+  background-color: rgb(255, 123, 171, 0.4);
 }
 html {
     -webkit-text-size-adjust: 100%;
@@ -84,54 +77,19 @@ html {
   }
   dfn {
     font-style: italic;
-  }  
-h1, h2 {
-  font-family: 'Manrope', 'sans-serif';
-  font-weight: 400;
-  letter-spacing: -0.06rem;
-}
-h1 {
-    font-size: 80px;
-}
-.menu {
-    font-family: 'Cormorant Infant', 'sans-serif';
-    font-weight: 400;
-}
-
+  } 
+  
 .noise {
     background: rgb(182, 34, 58);
     background-image: url(https://arc.net/noise.png);
 }
 
-.hamburger:hover .hamburger-line.top,
-.hamburger:hover .hamburger-line.bottom {
-    width: 1rem!important;
-}
-.project-card .project-image {
-    scale: 1.01;
-    transition: all 0.3s ease;
-}
-.project-card:hover .project-image{
-    opacity: 0.5;
-    scale: 1.04;
-    transition: all 0.3s ease;
+#works-section {
+  scroll-margin-top: 80px;
 }
 
-.scrolling-wrapper-flexbox {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
-.scrolling-wrapper-flexbox .card {
-  flex: 0 0 auto;
-}
-
-.fade-in {
-  transition: opacity 1.5s ease;
-}
-
-.fade-out {
-  opacity: 0;
-  transition: opacity 1.5s ease;
+@media only screen and (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
 }

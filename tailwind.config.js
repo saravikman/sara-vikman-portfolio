@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     fontFamily: {
       mono: ['Inconsolata', 'monospace'],
-      sans: ['Rubik', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
+      heading: ['Manrope', 'sans-serif'],
     },
     screens: {
       sm: '480px',
@@ -23,6 +24,7 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
+        'spin-slow': 'spin 10s linear infinite',
       }
     },
   },
